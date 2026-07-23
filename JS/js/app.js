@@ -631,17 +631,18 @@ function renderizarResultadosBusqueda(lista) {
     const hayFiltrosActivos = dom.busqueda.value.trim() !== '' || dom.filterEstado.value !== '' ||
         dom.filterEntrega.value !== '' || dom.filterTotal.value !== '';
 
-    if (!hayFiltrosActivos) {
-        dom.resultadosInfo.textContent = 'Aún no has realizado ninguna búsqueda. Escribe o elige un filtro rápido.';
-    } else {
-        dom.resultadosInfo.textContent = `${lista.length} pedido(s) encontrado(s).`;
-    }
-
     if (lista.length === 0) {
-        const filaVacia = crearFilaVacia(hayFiltrosActivos ? 'Ningún pedido coincide con tu búsqueda.' : 'No hay pedidos registrados.');
+        dom.resultadosInfo.classList.add('hidden');
+        const filaVacia = crearFilaVacia(
+            hayFiltrosActivos ? 'Ningún pedido coincide con tu búsqueda.' : 'No hay pedidos registrados.',
+            hayFiltrosActivos ? 'Prueba con otro término o ajusta los filtros.' : 'Aún no has realizado ninguna búsqueda o filtro.'
+        );
         dom.tablaBusquedaBody.appendChild(filaVacia);
         return;
     }
+
+    dom.resultadosInfo.classList.remove('hidden');
+    dom.resultadosInfo.textContent = `${lista.length} pedido(s) encontrado(s).`;
 
     lista.forEach((pedido, indice) => {
         dom.tablaBusquedaBody.appendChild(crearFilaPedido(pedido, indice + 1));
@@ -653,8 +654,10 @@ function renderizarTablaRegistros(listaFiltrada) {
     dom.tablePedidos.innerHTML = '';
 
     if (listaFiltrada.length === 0) {
-        const mensaje = pedidos.length === 0 ? 'No hay pedidos registrados' : 'Ningún pedido coincide con los filtros aplicados';
-        dom.tablePedidos.appendChild(crearFilaVacia(mensaje));
+        const filaVacia = pedidos.length === 0
+            ? crearFilaVacia('No hay pedidos registrados.', 'Registra tu primer pedido desde la página de Inicio.')
+            : crearFilaVacia('Ningún pedido coincide con los filtros aplicados.', 'Ajusta o limpia los filtros para ver más resultados.');
+        dom.tablePedidos.appendChild(filaVacia);
         renderizarPaginacion(0);
         return;
     }
@@ -673,12 +676,33 @@ function renderizarTablaRegistros(listaFiltrada) {
     renderizarPaginacion(listaFiltrada.length);
 }
 
-function crearFilaVacia(texto) {
+function crearFilaVacia(titulo, subtitulo) {
     const fila = document.createElement('tr');
     const celda = document.createElement('td');
     celda.colSpan = 11;
-    celda.className = 'text-center';
-    celda.textContent = texto;
+
+    const estado = document.createElement('div');
+    estado.className = 'empty-state';
+
+    const icono = document.createElement('span');
+    icono.className = 'empty-state-icon';
+    icono.innerHTML = '<span class="icon icon-inbox" aria-hidden="true"></span>';
+
+    const tituloEl = document.createElement('p');
+    tituloEl.className = 'empty-state-title';
+    tituloEl.textContent = titulo;
+
+    estado.appendChild(icono);
+    estado.appendChild(tituloEl);
+
+    if (subtitulo) {
+        const subtituloEl = document.createElement('p');
+        subtituloEl.className = 'empty-state-subtitle';
+        subtituloEl.textContent = subtitulo;
+        estado.appendChild(subtituloEl);
+    }
+
+    celda.appendChild(estado);
     fila.appendChild(celda);
     return fila;
 }

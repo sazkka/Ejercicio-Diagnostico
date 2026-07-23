@@ -261,86 +261,87 @@
                         </div>
                     </div>
 
-                    <div class="panel">
-                        <h3 class="panel-subtitle">Resumen de Pedidos</h3>
-                        <div class="stats-grid" id="statsEstadoGrid">
-                            <div class="stat-card">
-                                <span class="stat-icon stat-icon-total"><span class="icon icon-clipboard-list" aria-hidden="true"></span></span>
-                                <h3>Total de Pedidos</h3>
-                                <p id="statTotalPedidos" class="stat-value">0</p>
-                            </div>
-                            <div class="stat-card">
-                                <span class="stat-icon stat-icon-pending"><span class="icon icon-clock" aria-hidden="true"></span></span>
-                                <h3>Pendientes</h3>
-                                <p id="statPendientes" class="stat-value">0</p>
-                                <small id="pctPendientes" class="stat-pct">0%</small>
-                            </div>
-                            <div class="stat-card">
-                                <span class="stat-icon stat-icon-preparing"><span class="icon icon-cog" aria-hidden="true"></span></span>
-                                <h3>En Preparación</h3>
-                                <p id="statPreparacion" class="stat-value">0</p>
-                                <small id="pctPreparacion" class="stat-pct">0%</small>
-                            </div>
-                            <div class="stat-card">
-                                <span class="stat-icon stat-icon-sent"><span class="icon icon-truck" aria-hidden="true"></span></span>
-                                <h3>Enviados</h3>
-                                <p id="statEnviados" class="stat-value">0</p>
-                                <small id="pctEnviados" class="stat-pct">0%</small>
-                            </div>
-                            <div class="stat-card">
-                                <span class="stat-icon stat-icon-delivered"><span class="icon icon-check-circle" aria-hidden="true"></span></span>
-                                <h3>Entregados</h3>
-                                <p id="statEntregados" class="stat-value">0</p>
-                                <small id="pctEntregados" class="stat-pct">0%</small>
-                            </div>
-                            <div class="stat-card">
-                                <span class="stat-icon stat-icon-canceled"><span class="icon icon-times-circle" aria-hidden="true"></span></span>
-                                <h3>Cancelados</h3>
-                                <p id="statCancelados" class="stat-value">0</p>
-                                <small id="pctCancelados" class="stat-pct">0%</small>
+                    <div class="panel reportes-panel">
+                        <div class="reportes-section">
+                            <div class="stats-grid" id="statsEstadoGrid">
+                                <div class="stat-card">
+                                    <span class="stat-icon stat-icon-total"><span class="icon icon-clipboard-list" aria-hidden="true"></span></span>
+                                    <h3>Total de Pedidos</h3>
+                                    <p id="statTotalPedidos" class="stat-value">0</p>
+                                </div>
+                                <div class="stat-card">
+                                    <span class="stat-icon stat-icon-pending"><span class="icon icon-clock" aria-hidden="true"></span></span>
+                                    <h3>Pendientes</h3>
+                                    <p id="statPendientes" class="stat-value">0</p>
+                                    <small id="pctPendientes" class="stat-pct">0%</small>
+                                </div>
+                                <div class="stat-card">
+                                    <span class="stat-icon stat-icon-preparing"><span class="icon icon-cog" aria-hidden="true"></span></span>
+                                    <h3>En Preparación</h3>
+                                    <p id="statPreparacion" class="stat-value">0</p>
+                                    <small id="pctPreparacion" class="stat-pct">0%</small>
+                                </div>
+                                <div class="stat-card">
+                                    <span class="stat-icon stat-icon-sent"><span class="icon icon-truck" aria-hidden="true"></span></span>
+                                    <h3>Enviados</h3>
+                                    <p id="statEnviados" class="stat-value">0</p>
+                                    <small id="pctEnviados" class="stat-pct">0%</small>
+                                </div>
+                                <div class="stat-card">
+                                    <span class="stat-icon stat-icon-delivered"><span class="icon icon-check-circle" aria-hidden="true"></span></span>
+                                    <h3>Entregados</h3>
+                                    <p id="statEntregados" class="stat-value">0</p>
+                                    <small id="pctEntregados" class="stat-pct">0%</small>
+                                </div>
+                                <div class="stat-card">
+                                    <span class="stat-icon stat-icon-canceled"><span class="icon icon-times-circle" aria-hidden="true"></span></span>
+                                    <h3>Cancelados</h3>
+                                    <p id="statCancelados" class="stat-value">0</p>
+                                    <small id="pctCancelados" class="stat-pct">0%</small>
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                    <div class="panel">
-                        <h3 class="panel-subtitle">Resumen Financiero</h3>
-                        <div class="stats-grid" id="statsFinancieroGrid">
-                            <div class="stat-card">
-                                <span class="stat-icon stat-icon-money"><span class="icon icon-dollar-sign" aria-hidden="true"></span></span>
-                                <h3>Total Vendido</h3>
-                                <p id="statTotalVendido" class="stat-value">$0.00</p>
-                            </div>
-                            <div class="stat-card">
-                                <span class="stat-icon stat-icon-delivery"><span class="icon icon-truck-loading" aria-hidden="true"></span></span>
-                                <h3>Cobrado por Entregas</h3>
-                                <p id="statIngresoEntregas" class="stat-value">$0.00</p>
-                            </div>
-                            <div class="stat-card">
-                                <span class="stat-icon stat-icon-average"><span class="icon icon-chart-line" aria-hidden="true"></span></span>
-                                <h3>Promedio de Pedidos</h3>
-                                <p id="statPromedio" class="stat-value">$0.00</p>
-                            </div>
-                            <div class="stat-card">
-                                <span class="stat-icon stat-icon-max"><span class="icon icon-arrow-up" aria-hidden="true"></span></span>
-                                <h3>Mayor Valor</h3>
-                                <p id="statMayorValor" class="stat-value">$0.00</p>
-                            </div>
-                            <div class="stat-card">
-                                <span class="stat-icon stat-icon-min"><span class="icon icon-arrow-down" aria-hidden="true"></span></span>
-                                <h3>Menor Valor</h3>
-                                <p id="statMenorValor" class="stat-value">$0.00</p>
+                        <div class="reportes-section">
+                            <h3 class="panel-subtitle">Resumen Financiero</h3>
+                            <div class="stats-grid" id="statsFinancieroGrid">
+                                <div class="stat-card">
+                                    <span class="stat-icon stat-icon-money"><span class="icon icon-dollar-sign" aria-hidden="true"></span></span>
+                                    <h3>Total Vendido</h3>
+                                    <p id="statTotalVendido" class="stat-value">$0.00</p>
+                                </div>
+                                <div class="stat-card">
+                                    <span class="stat-icon stat-icon-delivery"><span class="icon icon-truck-loading" aria-hidden="true"></span></span>
+                                    <h3>Cobrado por Entregas</h3>
+                                    <p id="statIngresoEntregas" class="stat-value">$0.00</p>
+                                </div>
+                                <div class="stat-card">
+                                    <span class="stat-icon stat-icon-average"><span class="icon icon-chart-line" aria-hidden="true"></span></span>
+                                    <h3>Promedio de Pedidos</h3>
+                                    <p id="statPromedio" class="stat-value">$0.00</p>
+                                </div>
+                                <div class="stat-card">
+                                    <span class="stat-icon stat-icon-max"><span class="icon icon-arrow-up" aria-hidden="true"></span></span>
+                                    <h3>Mayor Valor</h3>
+                                    <p id="statMayorValor" class="stat-value">$0.00</p>
+                                </div>
+                                <div class="stat-card">
+                                    <span class="stat-icon stat-icon-min"><span class="icon icon-arrow-down" aria-hidden="true"></span></span>
+                                    <h3>Menor Valor</h3>
+                                    <p id="statMenorValor" class="stat-value">$0.00</p>
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                    <div class="reportes-columns">
-                        <div class="panel">
-                            <h3 class="panel-subtitle">Pedidos por Estado</h3>
-                            <div id="listaPorEstado" class="report-list"></div>
-                        </div>
-                        <div class="panel">
-                            <h3 class="panel-subtitle">Pedidos por Tipo de Entrega</h3>
-                            <div id="listaPorEntrega" class="report-list"></div>
+                        <div class="reportes-columns">
+                            <div class="reportes-column">
+                                <h3 class="panel-subtitle">Pedidos por Estado</h3>
+                                <div id="listaPorEstado" class="report-list"></div>
+                            </div>
+                            <div class="reportes-column">
+                                <h3 class="panel-subtitle">Pedidos por Tipo de Entrega</h3>
+                                <div id="listaPorEntrega" class="report-list"></div>
+                            </div>
                         </div>
                     </div>
 
