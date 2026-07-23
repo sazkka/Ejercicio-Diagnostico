@@ -60,7 +60,6 @@ body {
 .icon-clipboard-list { -webkit-mask-image: url("../imagenes/iconos/clipboard-list.svg"); mask-image: url("../imagenes/iconos/clipboard-list.svg"); }
 .icon-chart-bar { -webkit-mask-image: url("../imagenes/iconos/chart-bar.svg"); mask-image: url("../imagenes/iconos/chart-bar.svg"); }
 .icon-clipboard-check { -webkit-mask-image: url("../imagenes/iconos/clipboard-check.svg"); mask-image: url("../imagenes/iconos/clipboard-check.svg"); }
-.icon-user { -webkit-mask-image: url("../imagenes/iconos/user.svg"); mask-image: url("../imagenes/iconos/user.svg"); }
 .icon-plus { -webkit-mask-image: url("../imagenes/iconos/plus.svg"); mask-image: url("../imagenes/iconos/plus.svg"); }
 .icon-save { -webkit-mask-image: url("../imagenes/iconos/save.svg"); mask-image: url("../imagenes/iconos/save.svg"); }
 .icon-times { -webkit-mask-image: url("../imagenes/iconos/times.svg"); mask-image: url("../imagenes/iconos/times.svg"); }
@@ -213,18 +212,6 @@ body {
     margin: 0.1rem 0 0;
     font-size: 0.72rem;
     opacity: 0.9;
-}
-
-.topbar-avatar {
-    width: 1.7rem;
-    height: 1.7rem;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.2);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.8rem;
-    flex-shrink: 0;
 }
 
 /* Contenido de páginas, con scroll propio */
