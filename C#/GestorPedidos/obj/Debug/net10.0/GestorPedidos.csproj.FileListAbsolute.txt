@@ -1,0 +1,15 @@
+C:\Users\ESTUDIANTE\Desktop\LuisDuran\Ejercicio1\GestorPedidos\bin\Debug\net10.0\GestorPedidos.exe
+C:\Users\ESTUDIANTE\Desktop\LuisDuran\Ejercicio1\GestorPedidos\bin\Debug\net10.0\GestorPedidos.deps.json
+C:\Users\ESTUDIANTE\Desktop\LuisDuran\Ejercicio1\GestorPedidos\bin\Debug\net10.0\GestorPedidos.runtimeconfig.json
+C:\Users\ESTUDIANTE\Desktop\LuisDuran\Ejercicio1\GestorPedidos\bin\Debug\net10.0\GestorPedidos.dll
+C:\Users\ESTUDIANTE\Desktop\LuisDuran\Ejercicio1\GestorPedidos\bin\Debug\net10.0\GestorPedidos.pdb
+C:\Users\ESTUDIANTE\Desktop\LuisDuran\Ejercicio1\GestorPedidos\obj\Debug\net10.0\GestorPedidos.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ESTUDIANTE\Desktop\LuisDuran\Ejercicio1\GestorPedidos\obj\Debug\net10.0\GestorPedidos.AssemblyInfoInputs.cache
+C:\Users\ESTUDIANTE\Desktop\LuisDuran\Ejercicio1\GestorPedidos\obj\Debug\net10.0\GestorPedidos.AssemblyInfo.cs
+C:\Users\ESTUDIANTE\Desktop\LuisDuran\Ejercicio1\GestorPedidos\obj\Debug\net10.0\GestorPedidos.csproj.CoreCompileInputs.cache
+C:\Users\ESTUDIANTE\Desktop\LuisDuran\Ejercicio1\GestorPedidos\obj\Debug\net10.0\GestorPedidos.dll
+C:\Users\ESTUDIANTE\Desktop\LuisDuran\Ejercicio1\GestorPedidos\obj\Debug\net10.0\refint\GestorPedidos.dll
+C:\Users\ESTUDIANTE\Desktop\LuisDuran\Ejercicio1\GestorPedidos\obj\Debug\net10.0\GestorPedidos.pdb
+C:\Users\ESTUDIANTE\Desktop\LuisDuran\Ejercicio1\GestorPedidos\obj\Debug\net10.0\GestorPedidos.genruntimeconfig.cache
+C:\Users\ESTUDIANTE\Desktop\LuisDuran\Ejercicio1\GestorPedidos\obj\Debug\net10.0\ref\GestorPedidos.dll
+C:\Users\ESTUDIANTE\Desktop\LuisDuran\Ejercicio1\GestorPedidos\obj\Debug\net10.0\GestorPedidos.sourcelink.json
