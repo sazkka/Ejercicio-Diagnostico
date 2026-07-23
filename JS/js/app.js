@@ -1,30 +1,28 @@
 'use strict';
 
-/* ============================================================
-   ESTADO GLOBAL Y CONSTANTES
-   ============================================================ */
+/* Estado global y constantes */
 
-// Arreglo principal: única fuente de verdad de los pedidos.
+// Fuente de verdad de los pedidos
 const pedidos = [];
 
-// Código del pedido que se está editando actualmente (null = modo registro).
+// Código en edición (null = modo registro)
 let codigoEnEdicion = null;
 
-// Página actual de la paginación de la tabla de "Registros".
+// Página actual en Registros
 let paginaActual = 1;
 
-// Temporizador para ocultar automáticamente el mensaje de la parte superior.
+// Temporizador del mensaje superior
 let temporizadorMensaje = null;
 const DURACION_MENSAJE_MS = 3000;
 
-// Costo de entrega según el tipo seleccionado.
+// Costo según tipo de entrega
 const COSTOS_ENTREGA = {
     'Retiro en tienda': 0,
     'Entrega estándar': 2.5,
     'Entrega rápida': 5
 };
 
-// Estados válidos y a qué estados puede pasar cada uno.
+// Transiciones de estado permitidas
 const TRANSICIONES_ESTADO = {
     'Pendiente': ['En preparación', 'Cancelado'],
     'En preparación': ['Enviado', 'Cancelado'],
@@ -36,9 +34,7 @@ const TRANSICIONES_ESTADO = {
 const ORDEN_ESTADOS = ['Pendiente', 'En preparación', 'Enviado', 'Entregado', 'Cancelado'];
 const ESTADO_INICIAL = 'Pendiente';
 
-/* ============================================================
-   REFERENCIAS AL DOM
-   ============================================================ */
+/* Referencias al DOM */
 
 const dom = {
     navItems: document.querySelectorAll('.nav-item'),
@@ -108,9 +104,7 @@ const dom = {
     statTop3: document.getElementById('statTop3')
 };
 
-/* ============================================================
-   NAVEGACIÓN ENTRE PÁGINAS
-   ============================================================ */
+/* Navegación entre páginas */
 
 function mostrarPagina(nombre) {
     dom.pages.forEach(pagina => {
@@ -127,9 +121,7 @@ function inicializarNavegacion() {
     });
 }
 
-/* ============================================================
-   UTILIDADES
-   ============================================================ */
+/* Utilidades */
 
 function formatearMoneda(valor) {
     return '$' + valor.toFixed(2);
@@ -191,9 +183,7 @@ function programarOcultamientoMensaje() {
     temporizadorMensaje = setTimeout(ocultarMensaje, DURACION_MENSAJE_MS);
 }
 
-/* ============================================================
-   VALIDACIONES
-   ============================================================ */
+/* Validaciones */
 
 function validarPedido(datos, codigoOriginal) {
     const errores = [];
@@ -241,9 +231,7 @@ function validarPedido(datos, codigoOriginal) {
     return errores;
 }
 
-/* ============================================================
-   CÁLCULOS DEL PEDIDO
-   ============================================================ */
+/* Cálculos del pedido */
 
 function calcularValoresPedido(cantidad, precioUnitario, tipoEntrega) {
     const subtotal = cantidad * precioUnitario;
@@ -264,9 +252,7 @@ function leerDatosFormulario() {
     };
 }
 
-/* ============================================================
-   REGISTRO Y EDICIÓN DE PEDIDOS
-   ============================================================ */
+/* Registro y edición de pedidos */
 
 function manejarSubmitFormulario(evento) {
     evento.preventDefault();
@@ -384,9 +370,7 @@ function cancelarEdicion() {
     dom.formSubtitle.textContent = 'Completa la información del pedido para registrarlo en el sistema.';
 }
 
-/* ============================================================
-   CAMBIO DE ESTADO
-   ============================================================ */
+/* Cambio de estado */
 
 function abrirModalCambiarEstado(codigo) {
     const pedido = obtenerPedidoPorCodigo(codigo);
@@ -445,9 +429,7 @@ function cambiarEstadoPedido(codigo, nuevoEstado) {
     actualizarVista();
 }
 
-/* ============================================================
-   ELIMINACIÓN
-   ============================================================ */
+/* Eliminación */
 
 function abrirModalEliminar(codigo) {
     const pedido = obtenerPedidoPorCodigo(codigo);
@@ -504,9 +486,7 @@ function eliminarPedido(codigo) {
     actualizarVista();
 }
 
-/* ============================================================
-   MODAL GENÉRICO (abrir / cerrar)
-   ============================================================ */
+/* Modal genérico */
 
 function abrirModal() {
     dom.modalOverlay.classList.remove('hidden');
@@ -518,10 +498,7 @@ function cerrarModal() {
     dom.modalActions.innerHTML = '';
 }
 
-/* ============================================================
-   BÚSQUEDA, FILTROS Y ORDENAMIENTO
-   (una sola fuente de estado: los propios controles del DOM)
-   ============================================================ */
+/* Búsqueda, filtros y ordenamiento (el estado vive en los controles del DOM) */
 
 function obtenerPedidosFiltrados() {
     const texto = dom.busqueda.value.trim().toLowerCase();
@@ -583,9 +560,7 @@ function limpiarFiltros() {
     actualizarVista();
 }
 
-/* ============================================================
-   CHIPS RÁPIDOS DE ESTADO (página Búsqueda)
-   ============================================================ */
+/* Chips rápidos de estado (página Búsqueda) NO TOCAR!!!!!!!!!*/
 
 function inicializarChips() {
     const opciones = ['', ...ORDEN_ESTADOS];
@@ -613,9 +588,7 @@ function actualizarChipsActivos() {
     });
 }
 
-/* ============================================================
-   RENDERIZADO DE TABLAS (Registros paginado + Búsqueda completa)
-   ============================================================ */
+/* Renderizado de tablas (Registros paginado y Búsqueda completa) */
 
 function renderizarTablas() {
     const listaCompleta = obtenerPedidosFiltrados();
@@ -780,9 +753,7 @@ function crearCeldaAcciones(pedido) {
     return celda;
 }
 
-/* ============================================================
-   PAGINACIÓN (página Registros)
-   ============================================================ */
+/* Paginación (página Registros) */
 
 function renderizarPaginacion(totalItems) {
     const tamano = Number(dom.tamanoPagina.value);
@@ -852,9 +823,7 @@ function obtenerNumerosDePagina(actual, total) {
     return resultado;
 }
 
-/* ============================================================
-   ESTADÍSTICAS (página Reportes)
-   ============================================================ */
+/* Estadísticas (página Reportes) */
 
 function calcularEstadisticas() {
     const stats = {
@@ -1002,9 +971,7 @@ function renderizarTop3() {
     });
 }
 
-/* ============================================================
-   ACTUALIZACIÓN GENERAL DE LA VISTA
-   ============================================================ */
+/* ACTUALIZACIÓN GENERAL DE LA VISTA, NO ELIMINAR, NO DE NUEVO PORFAVOR!!! */
 
 function actualizarVista() {
     guardarPedidosEnLocalStorage();
@@ -1012,10 +979,7 @@ function actualizarVista() {
     actualizarPanelEstadisticas();
 }
 
-/* ============================================================
-   PERSISTENCIA EN LOCALSTORAGE
-   (funcionalidad adicional: los pedidos sobreviven a recargar la página)
-   ============================================================ */
+/* PERSISTENCIA EN LOCALSTORAGE (funcionalidad adicional: los pedidos sobreviven a recargar la página) */
 
 const CLAVE_LOCAL_STORAGE = 'gestionPedidos.pedidos';
 
@@ -1041,9 +1005,7 @@ function cargarPedidosDesdeLocalStorage() {
     }
 }
 
-/* ============================================================
-   INICIALIZACIÓN Y EVENTOS
-   ============================================================ */
+/*INICIALIZACIÓN Y EVENTOS */
 
 function inicializarEventos() {
     dom.form.addEventListener('submit', manejarSubmitFormulario);

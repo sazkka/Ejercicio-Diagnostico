@@ -37,10 +37,7 @@ body {
     display: none !important;
 }
 
-/* ============ ICONOS (SVG locales en imagenes/iconos/) ============ */
-/* Cada icono es un span vacío: el SVG se usa como máscara y se colorea
-   con background-color (currentColor), así se adapta al color de cada
-   contexto igual que hacía la fuente de iconos que se usaba antes. */
+/* Iconos: SVG como máscara, coloreado con currentColor */
 
 .icon {
     display: inline-block;
@@ -86,10 +83,7 @@ body {
 .icon-chevron-right { -webkit-mask-image: url("../imagenes/iconos/chevron-right.svg"); mask-image: url("../imagenes/iconos/chevron-right.svg"); }
 .icon-inbox { -webkit-mask-image: url("../imagenes/iconos/inbox.svg"); mask-image: url("../imagenes/iconos/inbox.svg"); }
 
-/* ============ LAYOUT GENERAL ============ */
-/* La app ocupa exactamente el alto de la pantalla: el sidebar, el
-   encabezado y el pie quedan fijos; solo el contenido de cada página
-   puede desplazarse internamente si llegara a no caber. */
+/* Layout general: sidebar, header y pie fijos, solo el contenido se desplaza */
 
 .app-shell {
     display: flex;
@@ -104,7 +98,7 @@ body {
     height: 100vh;
 }
 
-/* ============ SIDEBAR ============ */
+/* Barra lateral */
 
 .sidebar {
     width: var(--sidebar-width);
@@ -197,7 +191,7 @@ body {
     flex-shrink: 0;
 }
 
-/* ============ TOPBAR ============ */
+/* Barra superior */
 
 .topbar {
     flex-shrink: 0;
@@ -233,9 +227,7 @@ body {
     flex-shrink: 0;
 }
 
-/* ============ CONTENIDO / PÁGINAS ============ */
-/* Zona con scroll interno: si el contenido de alguna página no cabe,
-   solo esta franja se desplaza; el sidebar, el header y el pie no se mueven. */
+/* Contenido de páginas, con scroll propio */
 
 .content {
     width: min(1200px, 100%);
@@ -260,7 +252,7 @@ body {
     display: block;
 }
 
-/* La página de Inicio centra la tarjeta del formulario en el espacio disponible. */
+/* Centra el formulario en la página de Inicio */
 #page-inicio.active {
     display: flex;
     align-items: center;
@@ -306,7 +298,7 @@ body {
     padding-left: 1.2rem;
 }
 
-/* ============ TARJETAS / PANELES ============ */
+/* Tarjetas y paneles */
 
 .panel,
 .form-card {
@@ -407,7 +399,7 @@ body {
     color: var(--text-muted);
 }
 
-/* ============ FORMULARIO (página Inicio) ============ */
+/* Formulario de Inicio */
 
 .form-card {
     max-width: 760px;
@@ -494,7 +486,7 @@ body {
     margin-top: 0.2rem;
 }
 
-/* ============ BOTONES ============ */
+/* Botones */
 
 .btn {
     display: inline-flex;
@@ -534,7 +526,7 @@ body {
     color: #1f2937;
 }
 
-/* ============ BÚSQUEDA ============ */
+/* Búsqueda */
 
 .search-row {
     display: flex;
@@ -614,7 +606,7 @@ body {
     margin: 0 0 0.6rem;
 }
 
-/* ============ FILTROS (Registros) ============ */
+/* Filtros de Registros */
 
 .filters-row {
     display: grid;
@@ -641,7 +633,7 @@ body {
     font-size: 0.85rem;
 }
 
-/* ============ TABLA ============ */
+/* Tabla */
 
 .table-responsive {
     overflow-x: auto;
@@ -760,7 +752,7 @@ body {
 .badge-Entregado { background: var(--green); }
 .badge-Cancelado { background: var(--red); }
 
-/* ============ PAGINACIÓN ============ */
+/* Paginación */
 
 .pagination-bar {
     display: flex;
@@ -835,9 +827,7 @@ body {
     border: 1px solid #cbd5e1;
 }
 
-/* ============ REPORTES ============ */
-/* Tarjetas y espaciados reducidos a propósito: todo el panel de
-   reportes debe caber en una pantalla de PC sin necesitar scroll. */
+/* Reportes: espaciado compacto para que quepa sin scroll */
 
 .stats-grid {
     display: grid;
@@ -1008,7 +998,7 @@ body {
     margin: 0;
 }
 
-/* ============ MODAL ============ */
+/* Modal */
 
 .modal-overlay {
     position: fixed;
@@ -1051,7 +1041,7 @@ body {
     justify-content: flex-end;
 }
 
-/* ============ FOOTER ============ */
+/* Pie de página */
 
 .creditos {
     flex-shrink: 0;
@@ -1065,7 +1055,7 @@ body {
     margin: 0;
 }
 
-/* ============ RESPONSIVE ============ */
+/* Responsivo */
 
 @media (max-width: 900px) {
     body {
